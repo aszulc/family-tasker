@@ -7,7 +7,7 @@ const Pages = memo(function Pages() {
   return (
     <Routes>
       {Object.values(routes).map(({ path, element }) => (
-        <Route key={path} path={path} element={element}></Route>
+        <Route key={path} path={path} element={element} />
       ))}
     </Routes>
   );

@@ -1,8 +1,10 @@
 import { PathRouteProps } from 'react-router-dom';
 
 enum Pages {
-  Todos,
-  NotFound,
+  About = 'about',
+  Contact = 'contact',
+  Todos = 'todos',
+  NotFound = 'notFound',
 }
 
 type RouteProps = {
