@@ -6,21 +6,18 @@ import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
 
 import {
-  Authorization,
-  AuthorizationButton,
+  AuthButton,
   Button,
   Container,
+  CrossingLine,
   Header,
-  Line,
   Link,
   Logo,
   MainNav,
   MenuButton,
   MinNav,
   Nav,
-  Page,
-  Pages,
-  Settings,
+  PagesList,
 } from './styles';
 
 const HeaderComponent = memo(function HeaderComponent() {
@@ -30,7 +27,7 @@ const HeaderComponent = memo(function HeaderComponent() {
         <MinNav>
           <Logo>
             <Link to={routes[RoutingPages.Todos].path!}>cross off</Link>
-            <Line />
+            <CrossingLine />
           </Logo>
           <MenuButton>
             <MenuIcon />
@@ -38,25 +35,21 @@ const HeaderComponent = memo(function HeaderComponent() {
         </MinNav>
         <MainNav>
           <Nav>
-            <Pages>
-              <Page>
+            <PagesList>
+              <li>
                 <Link to={routes[RoutingPages.About].path!}>About</Link>
-              </Page>
-              <Page>
+              </li>
+              <li>
                 <Link to={routes[RoutingPages.Contact].path!}>Contact</Link>
-              </Page>
-            </Pages>
+              </li>
+            </PagesList>
           </Nav>
-          <Settings>
-            <Button>
-              <DarkModeIcon />
-            </Button>
-          </Settings>
-          <Authorization>
-            <AuthorizationButton>
-              <Link to={routes[RoutingPages.Contact].path!}>Log in / Sign up</Link>
-            </AuthorizationButton>
-          </Authorization>
+          <Button>
+            <DarkModeIcon />
+          </Button>
+          <AuthButton>
+            <Link to={routes[RoutingPages.Contact].path!}>Log in / Sign up</Link>
+          </AuthButton>
         </MainNav>
       </Container>
     </Header>
