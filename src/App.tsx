@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Layout from '@/layout';
 import Pages from '@/routes/Pages';
-import '@/styles/index.css';
+import '@/styles/index.scss';
 
 const App = memo(function App() {
   return (
