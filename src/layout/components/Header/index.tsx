@@ -6,6 +6,7 @@ import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
 
 import {
+  Auth,
   AuthButton,
   Button,
   Container,
@@ -16,8 +17,8 @@ import {
   MainNav,
   MenuButton,
   MinNav,
-  Nav,
   PagesList,
+  Settings,
 } from './styles';
 
 const HeaderComponent = memo(function HeaderComponent() {
@@ -34,7 +35,7 @@ const HeaderComponent = memo(function HeaderComponent() {
           </MenuButton>
         </MinNav>
         <MainNav>
-          <Nav>
+          <nav>
             <PagesList>
               <li>
                 <Link to={routes[RoutingPages.About].path!}>About</Link>
@@ -43,13 +44,17 @@ const HeaderComponent = memo(function HeaderComponent() {
                 <Link to={routes[RoutingPages.Contact].path!}>Contact</Link>
               </li>
             </PagesList>
-          </Nav>
-          <Button>
-            <DarkModeIcon />
-          </Button>
-          <AuthButton>
-            <Link to={routes[RoutingPages.Contact].path!}>Log in / Sign up</Link>
-          </AuthButton>
+          </nav>
+          <Settings>
+            <Button>
+              <DarkModeIcon />
+            </Button>
+          </Settings>
+          <Auth>
+            <AuthButton>
+              <Link to={routes[RoutingPages.Contact].path!}>Log in / Sign up</Link>
+            </AuthButton>
+          </Auth>
         </MainNav>
       </Container>
     </Header>

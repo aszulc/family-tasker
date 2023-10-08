@@ -17,7 +17,6 @@ export const Container = styled.div`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  gap: 3rem;
 
   width: 100%;
   max-width: 1440px;
@@ -25,6 +24,10 @@ export const Container = styled.div`
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+
+  @media screen and (min-width: 992px) {
+    gap: 3rem;
+  }
 `;
 
 export const MinNav = styled.div`
@@ -46,14 +49,22 @@ export const CrossingLine = styled.div`
   transform: translate(-50%, -50%);
   height: 0.12rem;
   width: 100%;
-  background-color: red;
+  background-color: #d2042d;
 `;
 
 export const Logo = styled.div`
   position: relative;
-  padding: 0 10px;
+  padding: 0 0.5rem;
   font-size: 130%;
   font-weight: 600;
+
+  &:hover {
+    a {
+      position: relative;
+      z-index: 1;
+      color: #1b1b1b;
+    }
+  }
 `;
 
 export const Button = styled.button`
@@ -68,6 +79,12 @@ export const Button = styled.button`
   color: #4e4e4e;
   cursor: pointer;
 
+  &:hover {
+    svg {
+      fill: #1b1b1b;
+    }
+  }
+
   svg {
     width: 24px;
     height: 24px;
@@ -81,42 +98,89 @@ export const MenuButton = styled(Button)`
 `;
 
 export const MainNav = styled.div`
-  display: none;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 
+  nav {
+    border-bottom: 1px solid #cdcdcd;
+  }
+
   @media screen and (min-width: 992px) {
-    display: flex;
+    flex-direction: row;
     flex: 1 1;
     align-items: center;
     gap: 2rem;
-  }
-`;
 
-export const Nav = styled.nav`
-  @media screen and (min-width: 992px) {
-    margin-right: auto;
+    nav {
+      margin-right: auto;
+      border-bottom: none;
+    }
   }
 `;
 
 export const PagesList = styled.ul`
   list-style: none;
+  margin: 0;
   padding: 0;
   gap: 2rem;
+
+  li {
+    border-top: 1px solid #cdcdcd;
+    height: 3rem;
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  a:hover {
+    color: #1b1b1b;
+    text-decoration: underline solid #d2042d 0.12rem;
+  }
 
   @media screen and (min-width: 992px) {
     display: flex;
     margin: 0 auto 0 0;
+
+    li {
+      border-top: none;
+      height: initial;
+      padding-left: initial;
+    }
   }
 `;
 
-export const AuthButton = styled.button`
+export const Auth = styled.div`
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  padding-left: 0.5rem;
+
+  @media screen and (min-width: 992px) {
+    padding-left: initial;
+  }
+`;
+
+export const AuthButton = styled(Button)`
   font-size: 0.9rem;
   background-color: #4e4e4e;
   border-radius: 4px;
   border: none;
   padding: 7px 15px;
 
+  &:hover {
+    background-color: #1b1b1b;
+  }
+
   a {
     color: #ffffff;
+  }
+`;
+
+export const Settings = styled(Auth)`
+  border-bottom: 1px solid #cdcdcd;
+
+  @media screen and (min-width: 992px) {
+    border-bottom: none;
   }
 `;
