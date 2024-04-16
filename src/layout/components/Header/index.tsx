@@ -1,7 +1,8 @@
-import { memo } from 'react';
+import { memo, useCallback, useState } from 'react';
 
 import { MoonIcon as DarkModeIcon, Bars3Icon as MenuIcon } from '@heroicons/react/24/solid';
 
+import { useWindowWidth } from '@/hooks/useWindowWidth';
 import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
 
@@ -22,6 +23,13 @@ import {
 } from './styles';
 
 const HeaderComponent = memo(function HeaderComponent() {
+  const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
+  const { isDesktop } = useWindowWidth();
+
+  const handleMenuButtonClick = useCallback(() => {
+    setIsMobileMenuVisible((state) => !state);
+  }, []);
+
   return (
     <Header>
       <Container>
@@ -30,11 +38,11 @@ const HeaderComponent = memo(function HeaderComponent() {
             <Link to={routes[RoutingPages.Todos].path!}>cross off</Link>
             <CrossingLine />
           </Logo>
-          <MenuButton>
+          <MenuButton onClick={handleMenuButtonClick}>
             <MenuIcon />
           </MenuButton>
         </MinNav>
-        <MainNav>
+        <MainNav visible={isDesktop || isMobileMenuVisible}>
           <nav>
             <PagesList>
               <li>

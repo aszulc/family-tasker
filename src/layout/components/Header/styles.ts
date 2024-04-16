@@ -2,6 +2,8 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import styled from 'styled-components';
 
+import { DESKTOP_WIDTH } from '@/hooks/useWindowWidth';
+
 export const Link = styled(RouterLink)`
   text-decoration: none;
   white-space: nowrap;
@@ -25,7 +27,7 @@ export const Container = styled.div`
   padding-left: 1rem;
   padding-right: 1rem;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${DESKTOP_WIDTH}px) {
     gap: 3rem;
   }
 `;
@@ -37,7 +39,7 @@ export const MinNav = styled.div`
   justify-content: space-between;
   height: 3rem;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${DESKTOP_WIDTH}px) {
     flex: initial;
   }
 `;
@@ -92,13 +94,13 @@ export const Button = styled.button`
 `;
 
 export const MenuButton = styled(Button)`
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${DESKTOP_WIDTH}px) {
     display: none;
   }
 `;
 
-export const MainNav = styled.div`
-  display: flex;
+export const MainNav = styled.div<{ visible: boolean }>`
+  display: ${(props) => (props.visible ? 'flex' : 'none')};
   flex-direction: column;
   width: 100%;
 
@@ -106,7 +108,7 @@ export const MainNav = styled.div`
     border-bottom: 1px solid #cdcdcd;
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${DESKTOP_WIDTH}px) {
     flex-direction: row;
     flex: 1 1;
     align-items: center;
@@ -138,7 +140,7 @@ export const PagesList = styled.ul`
     text-decoration: underline solid #d2042d 0.12rem;
   }
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${DESKTOP_WIDTH}px) {
     display: flex;
     margin: 0 auto 0 0;
 
@@ -156,7 +158,7 @@ export const Auth = styled.div`
   height: 3rem;
   padding-left: 0.5rem;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${DESKTOP_WIDTH}px) {
     padding-left: initial;
   }
 `;
@@ -180,7 +182,7 @@ export const AuthButton = styled(Button)`
 export const Settings = styled(Auth)`
   border-bottom: 1px solid #cdcdcd;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${DESKTOP_WIDTH}px) {
     border-bottom: none;
   }
 `;

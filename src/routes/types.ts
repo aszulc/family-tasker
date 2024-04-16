@@ -1,17 +1,16 @@
 import { PathRouteProps } from 'react-router-dom';
 
-enum Pages {
-  About = 'about',
-  Contact = 'contact',
-  Todos = 'todos',
-  NotFound = 'notFound',
-}
+export const Pages = {
+  About: 'about',
+  Contact: 'contact',
+  Todos: 'todos',
+  NotFound: 'notFound',
+};
+
+type PagesType = (typeof Pages)[keyof typeof Pages];
 
 type RouteProps = {
   title?: string;
 };
 
-type Routes = Record<Pages, PathRouteProps & RouteProps>;
-
-export type { Routes };
-export { Pages };
+export type Routes = Record<PagesType, PathRouteProps & RouteProps>;
