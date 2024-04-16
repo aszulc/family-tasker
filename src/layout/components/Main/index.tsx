@@ -1,10 +1,14 @@
 import { memo } from 'react';
 
 import { PropsWithChildren } from '../../types';
-import { Container } from './styles';
+import { Container, Main } from './styles';
 
-const Main = memo(function Main({ children }: PropsWithChildren) {
-  return <Container>{children}</Container>;
+const MainComponent = memo(function MainComponent({ children }: PropsWithChildren) {
+  return (
+    <Main>
+      <Container>{children}</Container>
+    </Main>
+  );
 });
 
-export default Main;
+export default MainComponent;
