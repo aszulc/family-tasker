@@ -103,12 +103,22 @@ export const MainNav = styled.div<{ visible: boolean }>`
   display: ${(props) => (props.visible ? 'flex' : 'none')};
   flex-direction: column;
   width: 100%;
+  position: absolute;
+  left: 0;
+  top: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #f9f9fb;
+  border-bottom: 1px solid #cdcdcd;
 
   nav {
     border-bottom: 1px solid #cdcdcd;
   }
 
   @media screen and (min-width: ${DESKTOP_WIDTH}px) {
+    position: static;
+    padding: 0;
+    border: none;
     flex-direction: row;
     flex: 1 1;
     align-items: center;

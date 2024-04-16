@@ -6,6 +6,7 @@ export const Main = styled.main`
   margin-left: auto;
   margin-right: auto;
   padding: 1rem;
+  height: calc(100% - (3rem + 1px));
 `;
 
 export const Container = styled.div`
@@ -13,4 +14,5 @@ export const Container = styled.div`
   background-color: #f9f9fb;
   border: 1px solid #cdcdcd;
   border-radius: 4px;
+  height: 100%;
 `;
