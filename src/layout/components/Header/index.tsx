@@ -1,4 +1,5 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { MoonIcon as DarkModeIcon, Bars3Icon as MenuIcon } from '@heroicons/react/24/solid';
 
@@ -25,6 +26,11 @@ import {
 const HeaderComponent = memo(function HeaderComponent() {
   const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
   const { isDesktop } = useWindowWidth();
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsMobileMenuVisible(false);
+  }, [location]);
 
   const handleMenuButtonClick = useCallback(() => {
     setIsMobileMenuVisible((state) => !state);
