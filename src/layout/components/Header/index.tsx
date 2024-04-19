@@ -16,6 +16,7 @@ import {
   Header,
   Link,
   Logo,
+  LogoLink,
   MainNav,
   MenuButton,
   MinNav,
@@ -41,7 +42,7 @@ const HeaderComponent = memo(function HeaderComponent() {
       <Container>
         <MinNav>
           <Logo>
-            <Link to={routes[RoutingPages.Todos].path!}>FamilyTasker</Link>
+            <LogoLink to={routes[RoutingPages.Todos].path!}>FamilyTasker</LogoLink>
             <CrossingLine />
           </Logo>
           <MenuButton onClick={handleMenuButtonClick}>
