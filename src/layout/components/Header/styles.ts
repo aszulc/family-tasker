@@ -59,13 +59,15 @@ export const Logo = styled.div`
   padding: 0 0.5rem;
   font-size: 130%;
   font-weight: 600;
+`;
+
+export const LogoLink = styled(Link)`
+  position: relative;
+  z-index: 1;
 
   &:hover {
-    a {
-      position: relative;
-      z-index: 1;
-      color: #1b1b1b;
-    }
+    z-index: 0;
+    color: #1b1b1b;
   }
 `;
 
