@@ -41,7 +41,7 @@ const HeaderComponent = memo(function HeaderComponent() {
       <Container>
         <MinNav>
           <Logo>
-            <Link to={routes[RoutingPages.Todos].path!}>cross off</Link>
+            <Link to={routes[RoutingPages.Todos].path!}>FamilyTracker</Link>
             <CrossingLine />
           </Logo>
           <MenuButton onClick={handleMenuButtonClick}>

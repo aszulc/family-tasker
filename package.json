@@ -1,9 +1,9 @@
 {
-  "name": "cross-off",
+  "name": "family-tracker",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1",
   "type": "module",
-  "description": "cross tasks off your to-do list",
+  "description": "Domestic duties management tool packed with features that help your family everyday.",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

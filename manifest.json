@@ -4,9 +4,9 @@
   "display": "browser",
   "scope": "/",
   "start_url": "/",
-  "name": "cross off",
-  "short_name": "cross off",
-  "description": "cross tasks off your to-do list",
+  "name": "FamilyTracker",
+  "short_name": "FamilyTracker",
+  "description": "Domestic duties management tool packed with features that help your family everyday.",
   "icons": [
     {
       "src": "/icon-192x192.png",
