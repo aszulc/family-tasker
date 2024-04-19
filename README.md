@@ -1,6 +1,6 @@
-# FamilyTracker
+# FamilyTasker
 
-FamilyTracker is a domestic duties management tool packed with features that help your family everyday.
+FamilyTasker is a domestic duties management tool packed with features that help your family everyday.
 
 ## Tech stack
 
@@ -17,13 +17,13 @@ FamilyTracker is a domestic duties management tool packed with features that hel
 clone the repository on your local machine
 
 ```
-git clone https://github.com/aszulc/family-tracker.git
+git clone https://github.com/aszulc/family-tasker.git
 ```
 
 navigate to project directory
 
 ```
-cd family-tracker
+cd family-tasker
 ```
 
 install the dependencies with Yarn

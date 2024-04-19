@@ -4,8 +4,8 @@
   "display": "browser",
   "scope": "/",
   "start_url": "/",
-  "name": "FamilyTracker",
-  "short_name": "FamilyTracker",
+  "name": "FamilyTasker",
+  "short_name": "FamilyTasker",
   "description": "Domestic duties management tool packed with features that help your family everyday.",
   "icons": [
     {
