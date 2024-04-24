@@ -11,7 +11,6 @@ FamilyTasker is a domestic duties management tool packed with features that help
 - TypeScript
 - shadcn-ui
 - Tailwind CSS
-- Heroicons
 
 ## Installing
 
