@@ -1,6 +1,6 @@
-import { Todo } from '@/pages/Todos/types';
+import { Task } from '@/pages/Tasks/types';
 
-export const initialTodos: Todo[] = [
+export const initialTasks: Task[] = [
   { id: 1, description: 'Add react-router-dom', completed: true },
   { id: 2, description: 'use useReducer hook', completed: true },
 ];

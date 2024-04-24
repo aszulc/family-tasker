@@ -1,15 +1,15 @@
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
-import Todos from '@/pages/Todos';
+import Tasks from '@/pages/Tasks';
 
 import { Pages, Routes } from './types';
 
 const routes: Routes = {
-  [Pages.Todos]: {
-    element: <Todos />,
+  [Pages.Tasks]: {
+    element: <Tasks />,
     path: '/',
-    title: 'Todos',
+    title: 'Tasks',
   },
   [Pages.About]: {
     element: <About />,

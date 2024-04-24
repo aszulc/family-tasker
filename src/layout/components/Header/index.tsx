@@ -1,79 +1,24 @@
-import { memo, useCallback, useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { memo } from 'react';
+import { Link } from 'react-router-dom';
 
-import { MoonIcon as DarkModeIcon, Bars3Icon as MenuIcon } from '@heroicons/react/24/solid';
-
-import { useWindowWidth } from '@/hooks/useWindowWidth';
 import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
 
-import {
-  Auth,
-  AuthButton,
-  Button,
-  Container,
-  CrossingLine,
-  Header,
-  Link,
-  Logo,
-  LogoLink,
-  MainNav,
-  MenuButton,
-  MinNav,
-  PagesList,
-  Settings,
-} from './styles';
+import MainNav from './components/MainNav';
+import MobileNav from './components/MobileNav';
 
-const HeaderComponent = memo(function HeaderComponent() {
-  const [isMobileMenuVisible, setIsMobileMenuVisible] = useState(false);
-  const { isDesktop } = useWindowWidth();
-  const location = useLocation();
-
-  useEffect(() => {
-    setIsMobileMenuVisible(false);
-  }, [location]);
-
-  const handleMenuButtonClick = useCallback(() => {
-    setIsMobileMenuVisible((state) => !state);
-  }, []);
-
+const Header = memo(function Header() {
   return (
-    <Header>
-      <Container>
-        <MinNav>
-          <Logo>
-            <LogoLink to={routes[RoutingPages.Todos].path!}>FamilyTasker</LogoLink>
-            <CrossingLine />
-          </Logo>
-          <MenuButton onClick={handleMenuButtonClick}>
-            <MenuIcon />
-          </MenuButton>
-        </MinNav>
-        <MainNav visible={isDesktop || isMobileMenuVisible}>
-          <nav>
-            <PagesList>
-              <li>
-                <Link to={routes[RoutingPages.About].path!}>About</Link>
-              </li>
-              <li>
-                <Link to={routes[RoutingPages.Contact].path!}>Contact</Link>
-              </li>
-            </PagesList>
-          </nav>
-          <Settings>
-            <Button>
-              <DarkModeIcon />
-            </Button>
-          </Settings>
-          <Auth>
-            <AuthButton>
-              <Link to={routes[RoutingPages.Contact].path!}>Log in / Sign up</Link>
-            </AuthButton>
-          </Auth>
-        </MainNav>
-      </Container>
-    </Header>
+    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
+        <Link to={routes[RoutingPages.Tasks].path!}>
+          <span>FamilyTasker</span>
+        </Link>
+        <MainNav />
+        <MobileNav />
+      </div>
+    </header>
   );
 });
 
-export default HeaderComponent;
+export default Header;

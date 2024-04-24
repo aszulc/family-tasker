@@ -1,9 +1,9 @@
 import { PathRouteProps } from 'react-router-dom';
 
 export const Pages = {
+  Tasks: 'tasks',
   About: 'about',
   Contact: 'contact',
-  Todos: 'todos',
   NotFound: 'notFound',
 };
 
