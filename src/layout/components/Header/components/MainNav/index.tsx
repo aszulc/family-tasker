@@ -1,13 +1,15 @@
 import { memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { GitHubLogoIcon, SunIcon } from '@radix-ui/react-icons';
+import { GitHubLogoIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
+
+import { ThemeToggle } from '../ThemeToggle';
 
 const MainNav = memo(function MainNav() {
   const { pathname } = useLocation();
@@ -58,17 +60,14 @@ const MainNav = memo(function MainNav() {
         </ul>
       </nav>
       <div className="flex items-center border-l border-slate-200 ml-6 pl-6 gap-6">
-        <Button variant="ghost" className="w-7 h-7 p-0">
-          <SunIcon className="w-6 h-6" />
-          <span className="sr-only">Switch theme</span>
-        </Button>
-        <Button variant="ghost" className="w-7 h-7 p-0">
+        <ThemeToggle />
+        <Button variant="ghost" size="icon">
           <Link to={siteConfig.links.github} target="_blank">
-            <GitHubLogoIcon className="w-6 h-6" />
+            <GitHubLogoIcon className="w-5 h-5" />
             <span className="sr-only">GitHub</span>
           </Link>
         </Button>
-        <Button className="h-7">
+        <Button className="h-8">
           <Link to={routes[RoutingPages.Contact].path!}>Log in / Sign up</Link>
         </Button>
       </div>

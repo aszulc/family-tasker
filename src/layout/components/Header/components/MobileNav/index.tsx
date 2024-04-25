@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { memo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { HamburgerMenuIcon, SunIcon } from '@radix-ui/react-icons';
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -10,6 +10,8 @@ import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
+
+import { ThemeToggle } from '../ThemeToggle';
 
 const MobileNav = memo(function MobileNav() {
   const { pathname } = useLocation();
@@ -22,8 +24,8 @@ const MobileNav = memo(function MobileNav() {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" className="md:hidden w-7 h-7 p-0">
-          <HamburgerMenuIcon className="w-6 h-6" />
+        <Button variant="ghost" className="md:hidden" size="icon">
+          <HamburgerMenuIcon className="w-5 h-5" />
         </Button>
       </SheetTrigger>
       <SheetContent side="right">
@@ -78,11 +80,8 @@ const MobileNav = memo(function MobileNav() {
           </li>
         </ul>
         <div className="flex flex-col space-y-5 mt-5 pt-5 border-t border-slate-200">
-          <Button variant="ghost" className="w-7 h-7 p-0">
-            <SunIcon className="w-6 h-6" />
-            <span className="sr-only">Switch theme</span>
-          </Button>
-          <Button className="h-7 w-40">
+          <ThemeToggle />
+          <Button className="h-8 w-40">
             <Link to={routes[RoutingPages.Contact].path!}>Log in / Sign up</Link>
           </Button>
         </div>
