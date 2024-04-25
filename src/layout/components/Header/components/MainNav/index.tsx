@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { GitHubLogoIcon, SunIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
+import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
@@ -62,7 +63,7 @@ const MainNav = memo(function MainNav() {
           <span className="sr-only">Switch theme</span>
         </Button>
         <Button variant="ghost" className="w-7 h-7 p-0">
-          <Link to="https://github.com/aszulc/family-tasker" target="_blank">
+          <Link to={siteConfig.links.github} target="_blank">
             <GitHubLogoIcon className="w-6 h-6" />
             <span className="sr-only">GitHub</span>
           </Link>

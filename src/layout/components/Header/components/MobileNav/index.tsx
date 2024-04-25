@@ -6,6 +6,7 @@ import { HamburgerMenuIcon, SunIcon } from '@radix-ui/react-icons';
 
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 import routes from '@/routes';
 import { Pages as RoutingPages } from '@/routes/types';
@@ -68,7 +69,7 @@ const MobileNav = memo(function MobileNav() {
           </li>
           <li>
             <Link
-              to="https://github.com/aszulc/family-tasker"
+              to={siteConfig.links.github}
               target="_blank"
               className="transition-colors hover:text-foreground/80 text-foreground/60"
             >
